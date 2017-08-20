@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Previous Entry</title>
+</head>
+<body>
+<ul>
+    {% for dat in data %}
+        <h2><center>{{ dat.date }}</center></h2>
+        <li>Start time - {{ dat.start_time }}</li>
+        <li>End time - {{ dat.end_time }}</li>
+        <li>Objective - {{ dat.today_objective }}</li>
+        <h3>List of objective given to student at that time</h3>
+        {% for stud in students %}
+            {% if stud.date == dat.date %}
+            <li>{{ stud.name.name }} -- {{ stud.objective }}</li>
+                {% else %}
+                <p>No present</p>
+            {% endif %}
+            {% endfor %}
+    {%  endfor %}
+</ul>
+</body>
+</html>
