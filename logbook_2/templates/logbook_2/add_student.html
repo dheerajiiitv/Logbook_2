@@ -6,6 +6,12 @@
 </head>
 <body>
 <h2>Add students here</h2>
+<h4>Previous Students</h4>
+<ul>
+    {% for stud in students %}
+        <li>{{  stud.name }} -- {{stud.id}}</li>
+    {% endfor %}
+</ul>
 <form action="{% url 'add_student' %}" method="POST">{% csrf_token %}
 <input type="number" name="id">
 <input type="text" name="name">

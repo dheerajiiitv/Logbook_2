@@ -17,8 +17,6 @@
         {% for stud in students %}
             {% if stud.date == dat.date %}
             <li>{{ stud.name.name }} -- {{ stud.objective }}</li>
-                {% else %}
-                <li>{{ stud.name.name  }} -- Not present</li>
             {% endif %}
             {% endfor %}
     {%  endfor %}

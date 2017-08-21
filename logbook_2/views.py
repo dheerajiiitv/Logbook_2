@@ -27,6 +27,9 @@ def new_entry(request):
                 ob = request.POST[sq]
                 student=StudDetails(name=s,objective=ob,present=True,date=dt)
                 student.save()
+            else:
+                student = StudDetails(name=s, objective="Not present", present=False, date=dt)
+                student.save()
 
         return HttpResponseRedirect("/logbook/")
     else:
@@ -48,6 +51,7 @@ def add_student(request):
         return HttpResponseRedirect('/logbook/')
 
     else:
-        return render(request,'logbook_2/add_student.html')
+        students = Students.objects.all()
+        return render(request,'logbook_2/add_student.html',{'students' : students})
 
 
