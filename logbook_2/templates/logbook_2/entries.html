@@ -7,16 +7,18 @@
 <body>
 <ul>
     {% for dat in data %}
+        <ul>
         <h2><center>{{ dat.date }}</center></h2>
         <li>Start time - {{ dat.start_time }}</li>
         <li>End time - {{ dat.end_time }}</li>
         <li>Objective - {{ dat.today_objective }}</li>
+        </ul>
         <h3>List of objective given to student at that time</h3>
         {% for stud in students %}
             {% if stud.date == dat.date %}
             <li>{{ stud.name.name }} -- {{ stud.objective }}</li>
                 {% else %}
-                <p>No present</p>
+                <li>{{ stud.name.name  }} -- Not present</li>
             {% endif %}
             {% endfor %}
     {%  endfor %}

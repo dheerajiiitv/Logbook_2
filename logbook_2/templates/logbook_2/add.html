@@ -5,6 +5,18 @@
     <title>Add Here</title>
 </head>
 <body>
+<form action="{% url 'new_entry' %}" method="POST">{% csrf_token %}
+   Date - <input type="date" name="dt"> <br>
+   Start time - <input type="time" name = "st" > <br>
+    End time -<input type="time" name = "et" > <br>
+    Objective - <input type="text" name ="obj"> <br>
+     {% for stud in students%}
+    <li>{{  stud.name  }} --
+        <input type="checkbox" name={{ stud.id }}> </li>
+         <input type="text" name= "ob{{stud.id  }}">
+    {%  endfor %}
+<input type="submit">
+</form>
 
 </body>
 </html>
