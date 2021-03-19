@@ -34,7 +34,7 @@ httplib2==0.10.3
 idna==2.5
 ipaddress==1.0.17
 itsdangerous==0.24
-Jinja2==2.9.6
+Jinja2==2.11.3
 lxml==3.7.3
 markdown2==2.3.4
 MarkupSafe==1.0
