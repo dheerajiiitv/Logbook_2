@@ -35,7 +35,7 @@ idna==2.5
 ipaddress==1.0.17
 itsdangerous==0.24
 Jinja2==2.9.6
-lxml==3.7.3
+lxml==4.9.1
 markdown2==2.3.4
 MarkupSafe==1.0
 ndg-httpsclient==0.4.2
